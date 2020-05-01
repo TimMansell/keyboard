@@ -1,7 +1,8 @@
 import React from 'react';
+import Piano from './components/Piano/Piano';
 
 function App() {
-  return <h1>Piano</h1>;
+  return <Piano />;
 }
 
 export default App;

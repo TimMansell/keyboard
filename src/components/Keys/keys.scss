@@ -1,0 +1,26 @@
+.key {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+
+  &__btn {
+    flex: 1;
+    border: 1px solid #000;
+
+    &:nth-of-type(1) {
+      background: #fff;
+      position: relative;
+      display: flex;
+    }
+
+    &:nth-of-type(2) {
+      position: absolute;
+      background: #000;
+      height: 70%;
+      z-index: 1;
+      width: 70%;
+      transform: translateX(-50%);
+    }
+  }
+}
