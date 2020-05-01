@@ -1,6 +1,6 @@
 import React from 'react';
 import './piano.scss';
-import keys from './beginner.json';
+import keys from './88keys.json';
 
 import Keys from '../Keys/Keys';
 
