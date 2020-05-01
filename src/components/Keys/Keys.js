@@ -13,7 +13,7 @@ function Keys({ type }) {
 }
 
 Keys.propTypes = {
-  type: PropTypes.object.isRequired,
+  type: PropTypes.array.isRequired,
 };
 
 export default Keys;
