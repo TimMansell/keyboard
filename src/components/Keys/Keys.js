@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import './keys.scss';
 
 function Keys({ type }) {
-  const handleClick = (key) => {
-    console.log('click', key);
+  const keysRef = useRef(null);
 
-    const audio = new Audio(`sounds/${key}.ogg`);
-    audio.play();
+  const handleClick = () => {
+    const key = keysRef.current;
+
+    key.pause();
+    key.currentTime = 0;
+    key.play();
   };
 
   return (
     <div className="key">
       {type.map((key, index) => (
-        <div
-          className="key__btn"
-          key={index}
-          onClick={() => handleClick(key)}
-        ></div>
+        <div className="key__btn" key={index} onClick={() => handleClick()}>
+          <audio ref={keysRef}>
+            <source src={`sounds/${key}.ogg`} type="audio/ogg"></source>
+          </audio>
+        </div>
       ))}
     </div>
   );
