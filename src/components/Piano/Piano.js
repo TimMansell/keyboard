@@ -7,9 +7,11 @@ import Keys from '../Keys/Keys';
 function Piano() {
   return (
     <div className="piano">
-      {keys.keys.map((key, index) => (
-        <Keys key={index} type={key} />
-      ))}
+      <div className="keys">
+        {keys.keys.map((key, index) => (
+          <Keys key={index} type={key} />
+        ))}
+      </div>
     </div>
   );
 }
