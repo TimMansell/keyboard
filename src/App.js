@@ -25,7 +25,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="app">
       Choose key layout:&nbsp;
       <select value={chosenLayout} onChange={(event) => setKeyLayout(event)}>
         <option value="keys25">25 keys</option>
@@ -36,7 +36,7 @@ function App() {
         <option value="keys88">88 keys</option>
       </select>
       <Piano keys={keyLayout[chosenLayout]} />
-    </>
+    </div>
   );
 }
 
