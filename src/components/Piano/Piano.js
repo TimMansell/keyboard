@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './piano.scss';
-import keys from './88keys.json';
 
 import Keys from '../Keys/Keys';
 
-function Piano() {
+function Piano({ keys }) {
   return (
     <div className="piano">
       <div className="keys">
@@ -15,5 +15,9 @@ function Piano() {
     </div>
   );
 }
+
+Piano.propTypes = {
+  keys: PropTypes.object.isRequired,
+};
 
 export default Piano;
