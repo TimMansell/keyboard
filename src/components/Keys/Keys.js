@@ -1,26 +1,39 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import Tone from 'tone';
 import './keys.scss';
 
 function Keys({ type }) {
-  const keysRef = useRef(null);
+  const synth = new Tone.MonoSynth({
+    oscillator: {
+      partials: [3, 2, 1],
+      type: 'custom',
+      frequency: 'C#4',
+      volume: -12,
+    },
+    envelope: {
+      attack: 0.11,
+      decay: 0.21,
+      sustain: 1,
+      release: 1.71,
+      attackCurve: 'exponential',
+      decayCurve: 'exponential',
+      releaseCurve: 'exponential',
+    },
+  }).toMaster();
 
-  const handleClick = () => {
-    const key = keysRef.current;
-
-    key.pause();
-    key.currentTime = 0;
-    key.play();
+  const handleClick = (key) => {
+    synth.triggerAttackRelease(key, '8n');
   };
 
   return (
     <div className="key">
       {type.map((key, index) => (
-        <div className="key__btn" key={index} onClick={() => handleClick()}>
-          <audio ref={keysRef}>
-            <source src={`sounds/${key}.ogg`} type="audio/ogg"></source>
-          </audio>
-        </div>
+        <div
+          className="key__btn"
+          key={index}
+          onClick={() => handleClick(key)}
+        ></div>
       ))}
     </div>
   );
