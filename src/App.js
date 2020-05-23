@@ -21,18 +21,26 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Piano keys={keyLayout[chosenLayout]} />
-      <div className="choose-layout">
-        Choose key layout:&nbsp;
-        <select value={chosenLayout} onChange={(event) => setKeyLayout(event)}>
-          <option value="keys25">25 keys</option>
-          <option value="keys37">37 keys</option>
-          <option value="keys49">49 keys</option>
-          <option value="keys61">61 keys</option>
-        </select>
+    <>
+      <div className="app">
+        <Piano keys={keyLayout[chosenLayout]} />
+        <div className="choose-layout">
+          Choose key layout:&nbsp;
+          <select
+            value={chosenLayout}
+            onChange={(event) => setKeyLayout(event)}
+          >
+            <option value="keys25">25 keys</option>
+            <option value="keys37">37 keys</option>
+            <option value="keys49">49 keys</option>
+            <option value="keys61">61 keys</option>
+          </select>
+        </div>
       </div>
-    </div>
+      <p className="rotate-device">
+        Please rotate your device to landscape mode
+      </p>
+    </>
   );
 }
 
