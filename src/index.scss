@@ -53,7 +53,7 @@ code {
   display: none;
   margin-top: 1rem;
 
-  @media (orientation: portrait) and (max-width: 1023px), (any-pointer: fine) {
+  @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
     display: block;
   }
 }
