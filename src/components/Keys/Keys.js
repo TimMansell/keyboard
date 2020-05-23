@@ -4,7 +4,7 @@ import Tone from 'tone';
 import './keys.scss';
 
 function Keys({ type }) {
-  const synth = new Tone.MonoSynth({
+  const synth = new Tone.Synth({
     oscillator: {
       partials: [3, 2, 1],
       type: 'custom',
