@@ -38,4 +38,17 @@ code {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: #000;
+
+  @media (min-width: 768px) {
+    background: transparent;
+  }
+}
+
+.choose-layout {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 }

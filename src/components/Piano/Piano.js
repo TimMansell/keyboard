@@ -11,9 +11,9 @@ function Piano({ keys }) {
   return (
     <div className="piano">
       <div className="controls">
-        <div className="speakers"></div>
+        <div className="speakers speakers--left"></div>
         <div className="knobs">1</div>
-        <div className="speakers"></div>
+        <div className="speakers speakers--right"></div>
       </div>
       <div className={classes}>
         {keys.keys.map((key, index) => (
