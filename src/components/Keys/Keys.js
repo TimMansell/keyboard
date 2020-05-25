@@ -1,46 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Tone from 'tone';
+import React, { useContext } from 'react';
+import { ControlsContext } from '../../context/controls';
+import Key from './Key';
 import './keys.scss';
 
-function Keys({ type }) {
-  const synth = new Tone.Synth({
-    oscillator: {
-      partials: [3, 2, 1],
-      type: 'custom',
-      frequency: 'C#4',
-      volume: -12,
-    },
-    envelope: {
-      attack: 0.11,
-      decay: 0.21,
-      sustain: 1,
-      release: 1.71,
-      attackCurve: 'exponential',
-      decayCurve: 'exponential',
-      releaseCurve: 'exponential',
-    },
-  }).toMaster();
+import keys25 from '../../config/25keys.json';
+import keys37 from '../../config/37keys.json';
+import keys49 from '../../config/49keys.json';
+import keys61 from '../../config/61keys.json';
 
-  const handleClick = (key) => {
-    synth.triggerAttackRelease(key, '8n');
-  };
+const keyLayout = {
+  keys25,
+  keys37,
+  keys49,
+  keys61,
+};
+
+function Keys() {
+  const [keys] = useContext(ControlsContext);
 
   return (
-    <div className="key">
-      {type.map((key, index) => (
-        <div
-          className="key__btn"
-          key={index}
-          onClick={() => handleClick(key)}
-        ></div>
+    <div className="keys">
+      {keyLayout[keys].keys.map((key, index) => (
+        <Key key={index} type={key} />
       ))}
     </div>
   );
 }
-
-Keys.propTypes = {
-  type: PropTypes.array.isRequired,
-};
 
 export default Keys;

@@ -49,15 +49,6 @@ code {
   }
 }
 
-.choose-layout {
-  display: none;
-  margin-top: 1rem;
-
-  @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
-    display: block;
-  }
-}
-
 .rotate-device {
   padding: 1rem;
   text-align: center;
