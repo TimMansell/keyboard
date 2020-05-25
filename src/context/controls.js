@@ -7,7 +7,7 @@ export const ControlsContextProvider = ({ children }) => {
   const [keys, setKeys] = useState('keys37');
 
   return (
-    <ControlsContext.Provider value={[keys, setKeys]}>
+    <ControlsContext.Provider value={{ keys, setKeys }}>
       {children}
     </ControlsContext.Provider>
   );

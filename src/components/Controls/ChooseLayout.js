@@ -1,21 +1,41 @@
 import React, { useContext } from 'react';
 import { ControlsContext } from '../../context/controls';
 
-function Controls() {
-  const [keys, setKeys] = useContext(ControlsContext);
+const keyLayoutOptions = [
+  {
+    label: '25 keys',
+    value: 'keys25',
+  },
+  {
+    label: '37 keys',
+    value: 'keys37',
+  },
+  {
+    label: '49 keys',
+    value: 'keys49',
+  },
+  {
+    label: '61 keys',
+    value: 'keys61',
+  },
+];
 
-  const setKeyLayout = (event) => {
+function Controls() {
+  const { keys, setKeys } = useContext(ControlsContext);
+
+  const setLayout = (event) => {
     setKeys(event.target.value);
   };
 
   return (
     <div className="choose-layout">
-      Choose key layout:&nbsp;
-      <select value={keys} onChange={(event) => setKeyLayout(event)}>
-        <option value="keys25">25 keys</option>
-        <option value="keys37">37 keys</option>
-        <option value="keys49">49 keys</option>
-        <option value="keys61">61 keys</option>
+      <label className="choose-layout__label">Choose key layout:</label>
+      <select value={keys} onChange={(event) => setLayout(event)}>
+        {keyLayoutOptions.map((layout, index) => (
+          <option value={layout.value} key={index}>
+            {layout.label}
+          </option>
+        ))}
       </select>
     </div>
   );

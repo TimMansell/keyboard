@@ -8,7 +8,7 @@ import keys37 from '../../config/37keys.json';
 import keys49 from '../../config/49keys.json';
 import keys61 from '../../config/61keys.json';
 
-const keyLayout = {
+const keyLayouts = {
   keys25,
   keys37,
   keys49,
@@ -16,13 +16,14 @@ const keyLayout = {
 };
 
 function Keys() {
-  const [keys] = useContext(ControlsContext);
+  const { keys } = useContext(ControlsContext);
 
   return (
     <div className="keys">
-      {keyLayout[keys].keys.map((key, index) => (
-        <Key key={index} type={key} />
-      ))}
+      {keys &&
+        keyLayouts[keys].keys.map((key, index) => (
+          <Key key={index} type={key} />
+        ))}
     </div>
   );
 }
