@@ -1,31 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import Controls from '../Controls/Controls';
+import Keys from '../Keys/Keys';
 import './piano.scss';
 
-import Keys from '../Keys/Keys';
-
-function Piano({ keys }) {
-  const classes = classnames('keys');
-
+function Piano() {
   return (
     <div className="piano">
-      <div className="controls">
-        <div className="speakers speakers--left"></div>
-        <div className="knobs">1</div>
-        <div className="speakers speakers--right"></div>
-      </div>
-      <div className={classes}>
-        {keys.keys.map((key, index) => (
-          <Keys key={index} type={key} />
-        ))}
-      </div>
+      <Controls />
+      <Keys />
     </div>
   );
 }
-
-Piano.propTypes = {
-  keys: PropTypes.object.isRequired,
-};
 
 export default Piano;

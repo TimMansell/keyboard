@@ -1,0 +1,45 @@
+.controls {
+  display: none;
+
+  @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
+    display: flex;
+    height: 180px;
+    margin-bottom: 3rem;
+  }
+}
+
+.speakers {
+  flex: 3;
+  background: #0c0c0c;
+  border: 2px solid #272222;
+  background: linear-gradient(transparent 70%, #272222 30%), linear-gradient(90deg, transparent 70%, #272222 30%), #000;
+  background-size: 1px 5px, 5px 1px, 100% 100%;
+
+  &--left {
+    border-radius: 15px 15px 75px;
+    transform: skewX(2deg);
+  }
+
+  &--right {
+    border-radius: 15px 15px 15px 75px;
+    transform: skewX(-2deg);
+  }
+}
+
+.knobs {
+  flex: 10;
+  padding: 1rem;
+}
+
+.choose-layout {
+  display: none;
+
+  @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
+    display: block;
+  }
+
+  &__label {
+    color: #fff;
+    display: block;
+  }
+}
