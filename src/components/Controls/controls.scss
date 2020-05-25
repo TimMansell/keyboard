@@ -28,13 +28,18 @@
 
 .knobs {
   flex: 10;
+  padding: 1rem;
 }
 
 .choose-layout {
   display: none;
-  margin-top: 1rem;
 
   @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
+    display: block;
+  }
+
+  &__label {
+    color: #fff;
     display: block;
   }
 }
