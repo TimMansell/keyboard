@@ -1,0 +1,12 @@
+.container {
+  display: none;
+
+  @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
+    display: block;
+  }
+}
+
+.label {
+  color: #fff;
+  display: block;
+}

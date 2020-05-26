@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './key.scss';
+import styles from './Key.module.scss';
 
 import playKey from '../../service/audio';
 
@@ -10,10 +10,10 @@ function Key({ type }) {
   };
 
   return (
-    <div className="key">
+    <div className={styles.key}>
       {type.map((key, index) => (
         <div
-          className="key__btn"
+          className={styles.btn}
           key={index}
           onClick={() => handleClick(key)}
         ></div>
