@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`one white and one black key snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="key"
+  >
+    <div
+      class="key__btn"
+      data-testid="key-0"
+    />
+    <div
+      class="key__btn"
+      data-testid="key-1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`one white key snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="key"
+  >
+    <div
+      class="key__btn"
+      data-testid="key-0"
+    />
+  </div>
+</DocumentFragment>
+`;

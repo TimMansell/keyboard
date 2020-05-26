@@ -4,7 +4,6 @@ import './key.scss';
 
 import playKey from '../../service/audio';
 
-
 function Key({ type }) {
   const handleClick = (key) => {
     playKey(key);
@@ -17,7 +16,8 @@ function Key({ type }) {
           className="key__btn"
           key={index}
           onClick={() => handleClick(key)}
-        ></div>
+          data-testid={`key-${index}`}
+        />
       ))}
     </div>
   );
