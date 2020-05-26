@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ControlsContext } from '../../context/controls';
-import styles from './Controls.module.scss';
+import styles from './ChooseLayout.module.scss';
 
 const keyLayoutOptions = [
   {
@@ -29,8 +29,8 @@ function Controls() {
   };
 
   return (
-    <div className={styles.chooseLayout}>
-      <label className={styles.chooseLayoutLabel}>Choose key layout:</label>
+    <div className={styles.container}>
+      <label className={styles.label}>Choose key layout:</label>
       <select value={keys} onChange={(event) => setLayout(event)}>
         {keyLayoutOptions.map((layout, index) => (
           <option value={layout.value} key={index}>

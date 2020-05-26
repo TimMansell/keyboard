@@ -13,34 +13,21 @@
   border: 2px solid #272222;
   background: linear-gradient(transparent 70%, #272222 30%), linear-gradient(90deg, transparent 70%, #272222 30%), #0c0c0c;
   background-size: 1px 5px, 5px 1px, 100% 100%;
+}
 
-  &Left {
-    composes: speakers;
-    border-radius: 15px 15px 75px;
-    transform: skewX(2deg);
-  }
+.leftSpeaker {
+  composes: speakers;
+  border-radius: 15px 15px 75px;
+  transform: skewX(2deg);
+}
 
-  &Right {
-    composes: speakers;
-    border-radius: 15px 15px 15px 75px;
-    transform: skewX(-2deg);
-  }
+.rightSpeaker {
+  composes: speakers;
+  border-radius: 15px 15px 15px 75px;
+  transform: skewX(-2deg);
 }
 
 .knobs {
   flex: 10;
   padding: 1rem;
-}
-
-.chooseLayout {
-  display: none;
-
-  @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
-    display: block;
-  }
-
-  &Label {
-    color: #fff;
-    display: block;
-  }
 }

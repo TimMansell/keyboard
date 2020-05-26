@@ -5,11 +5,11 @@ import styles from './Controls.module.scss';
 function Controls() {
   return (
     <div className={styles.controls}>
-      <div className={styles.speakersLeft}></div>
+      <div className={styles.leftSpeaker}></div>
       <div className={styles.knobs}>
         <ChooseLayout />
       </div>
-      <div className={styles.speakersRight}></div>
+      <div className={styles.rightSpeaker}></div>
     </div>
   );
 }
