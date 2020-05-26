@@ -1,15 +1,15 @@
 import React from 'react';
 import ChooseLayout from './ChooseLayout';
-import './controls.scss';
+import styles from './Controls.module.scss';
 
 function Controls() {
   return (
-    <div className="controls">
-      <div className="speakers speakers--left"></div>
-      <div className="knobs">
+    <div className={styles.controls}>
+      <div className={styles.speakersLeft}></div>
+      <div className={styles.knobs}>
         <ChooseLayout />
       </div>
-      <div className="speakers speakers--right"></div>
+      <div className={styles.speakersRight}></div>
     </div>
   );
 }

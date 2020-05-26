@@ -14,12 +14,14 @@
   background: linear-gradient(transparent 70%, #272222 30%), linear-gradient(90deg, transparent 70%, #272222 30%), #0c0c0c;
   background-size: 1px 5px, 5px 1px, 100% 100%;
 
-  &--left {
+  &Left {
+    composes: speakers;
     border-radius: 15px 15px 75px;
     transform: skewX(2deg);
   }
 
-  &--right {
+  &Right {
+    composes: speakers;
     border-radius: 15px 15px 15px 75px;
     transform: skewX(-2deg);
   }
@@ -30,14 +32,14 @@
   padding: 1rem;
 }
 
-.choose-layout {
+.chooseLayout {
   display: none;
 
   @media (orientation: portrait) and (max-width: 1023px), (pointer: fine) {
     display: block;
   }
 
-  &__label {
+  &Label {
     color: #fff;
     display: block;
   }
