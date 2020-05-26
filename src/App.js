@@ -11,7 +11,6 @@ function App() {
       <p className="rotate-device">
         Please rotate your device to landscape mode
       </p>
-      <p>test</p>
     </ControlsContextProvider>
   );
 }
